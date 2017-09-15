@@ -17,12 +17,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var token = ""
     var dic: NSDictionary? = nil
     
-  /*  @IBAction func unwindToSearchLogin(unwindSegue: UIStoryboardSegue) {
-        print("ok")
-        if (unwindSegue.identifier == "unwindFromInfosStudent") {
-            Login.text = ""
+    override func viewDidAppear(_ animated: Bool) {
+        if ((Login.text?.characters.count)! > 0)
+        {
+            Button.isEnabled = true
+            Button.alpha = 1.0
         }
-    }*/
+    }
     
     func alert(title: String, message: String, buttonTitle: String) {
         DispatchQueue.main.async {
@@ -151,6 +152,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func SearchLogin(_ sender: Any) {
+        Button.isEnabled = false
+        Button.alpha = 0.5
         getInfosStudent(token: token, login: Login.text!)
     }
     

@@ -19,67 +19,7 @@
 		C9FD7F241F28FCFD00416590 /* InfosStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FD7F231F28FCFD00416590 /* InfosStudent.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C9616FD91F2C8EF900E649CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9616FCF1F2C8EF900E649CC /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F435027A1A6791B200038A29;
-			remoteInfo = OAuthSwift;
-		};
-		C9616FDB1F2C8EF900E649CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9616FCF1F2C8EF900E649CC /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C48B28021AFA598D00C7DEF6;
-			remoteInfo = OAuthSwiftOSX;
-		};
-		C9616FDD1F2C8EF900E649CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9616FCF1F2C8EF900E649CC /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C4B6EE1E1BF74CE300443596;
-			remoteInfo = OAuthSwiftTVOS;
-		};
-		C9616FDF1F2C8EF900E649CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9616FCF1F2C8EF900E649CC /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C40890C01C11B37000E3146A;
-			remoteInfo = OAuthSwiftWatchOS;
-		};
-		C9616FE11F2C8EF900E649CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9616FCF1F2C8EF900E649CC /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F451E3C5195B8CD80051434C;
-			remoteInfo = OAuthSwiftDemo;
-		};
-		C9616FE31F2C8EF900E649CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9616FCF1F2C8EF900E649CC /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C49FD5241AFB5DF500791E1A;
-			remoteInfo = OAuthSwiftOSXDemo;
-		};
-		C9616FE51F2C8EF900E649CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9616FCF1F2C8EF900E649CC /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C4D50DF71BFB693F0053B624;
-			remoteInfo = OAuthSwiftTests;
-		};
-		C9616FE71F2C8F3600E649CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9616FCF1F2C8EF900E649CC /* OAuthSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F43502791A6791B200038A29;
-			remoteInfo = OAuthSwift;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		C9616FCF1F2C8EF900E649CC /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = ../../OAuthSwift/OAuthSwift.xcodeproj; sourceTree = "<group>"; };
 		C9644F661F34A26200F18F11 /* SkillsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsTableViewCell.swift; sourceTree = "<group>"; };
 		C9644F6E1F34A3AF00F18F11 /* SkillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillTableViewCell.swift; sourceTree = "<group>"; };
 		C9653A861F338A1B009D47CD /* ProjectsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewCell.swift; sourceTree = "<group>"; };
@@ -105,20 +45,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C9616FD01F2C8EF900E649CC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C9616FDA1F2C8EF900E649CC /* OAuthSwift.framework */,
-				C9616FDC1F2C8EF900E649CC /* OAuthSwift.framework */,
-				C9616FDE1F2C8EF900E649CC /* OAuthSwift.framework */,
-				C9616FE01F2C8EF900E649CC /* OAuthSwift.framework */,
-				C9616FE21F2C8EF900E649CC /* OAuthSwiftDemo.app */,
-				C9616FE41F2C8EF900E649CC /* OAuthSwiftOSXDemo.app */,
-				C9616FE61F2C8EF900E649CC /* OAuthSwiftTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C9FD7EFF1F28A9E300416590 = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +75,6 @@
 				C985B6051F29448F006C2A38 /* Main.storyboard */,
 				C9FD7F141F28A9E300416590 /* LaunchScreen.storyboard */,
 				C9FD7F171F28A9E300416590 /* Info.plist */,
-				C9616FCF1F2C8EF900E649CC /* OAuthSwift.xcodeproj */,
 			);
 			path = SwiftyCompanion;
 			sourceTree = "<group>";
@@ -168,7 +93,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C9616FE81F2C8F3600E649CC /* PBXTargetDependency */,
 			);
 			name = SwiftyCompanion;
 			productName = SwiftyCompanion;
@@ -202,70 +126,12 @@
 			mainGroup = C9FD7EFF1F28A9E300416590;
 			productRefGroup = C9FD7F091F28A9E300416590 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C9616FD01F2C8EF900E649CC /* Products */;
-					ProjectRef = C9616FCF1F2C8EF900E649CC /* OAuthSwift.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C9FD7F071F28A9E300416590 /* SwiftyCompanion */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C9616FDA1F2C8EF900E649CC /* OAuthSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OAuthSwift.framework;
-			remoteRef = C9616FD91F2C8EF900E649CC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C9616FDC1F2C8EF900E649CC /* OAuthSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OAuthSwift.framework;
-			remoteRef = C9616FDB1F2C8EF900E649CC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C9616FDE1F2C8EF900E649CC /* OAuthSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OAuthSwift.framework;
-			remoteRef = C9616FDD1F2C8EF900E649CC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C9616FE01F2C8EF900E649CC /* OAuthSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OAuthSwift.framework;
-			remoteRef = C9616FDF1F2C8EF900E649CC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C9616FE21F2C8EF900E649CC /* OAuthSwiftDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = OAuthSwiftDemo.app;
-			remoteRef = C9616FE11F2C8EF900E649CC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C9616FE41F2C8EF900E649CC /* OAuthSwiftOSXDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = OAuthSwiftOSXDemo.app;
-			remoteRef = C9616FE31F2C8EF900E649CC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C9616FE61F2C8EF900E649CC /* OAuthSwiftTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = OAuthSwiftTests.xctest;
-			remoteRef = C9616FE51F2C8EF900E649CC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C9FD7F061F28A9E300416590 /* Resources */ = {
@@ -296,14 +162,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C9616FE81F2C8F3600E649CC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OAuthSwift;
-			targetProxy = C9616FE71F2C8F3600E649CC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C9FD7F141F28A9E300416590 /* LaunchScreen.storyboard */ = {
