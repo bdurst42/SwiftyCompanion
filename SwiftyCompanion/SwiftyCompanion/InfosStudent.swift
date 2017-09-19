@@ -27,6 +27,7 @@ UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var levelBar: UIProgressView!
     
     @IBOutlet weak var Projects: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var dic: NSDictionary? = nil
     var numberOfCells = 2
@@ -37,15 +38,26 @@ UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // Projects.estimatedRowHeight = 100.0
+        //Projects.estimatedRowHeight = 100.0
         //Projects.rowHeight = UITableViewAutomaticDimension
         let transform : CGAffineTransform = CGAffineTransform(scaleX: 1.0, y: 8.0)
         levelBar.transform = transform
-        let screenSize: CGRect = UIScreen.main.bounds
-        profilePicture.frame = CGRect(x: 0, y: 0, width: screenSize.width * 0.5, height: screenSize.width * 0.5)
-        profilePicture.layer.cornerRadius = (profilePicture.frame.width / 2)
-        profilePicture.layer.masksToBounds = true
         fillInfosStudent(dic: self.dic!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        profilePicture.layer.masksToBounds = false
+        profilePicture.layer.cornerRadius = (profilePicture.frame.width / 2)
+        profilePicture.clipsToBounds = true
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        var contentRect: CGRect = CGRect.zero
+        for view in self.scrollView.subviews {
+            contentRect = contentRect.union(view.frame);
+        }
+        self.scrollView.contentSize = contentRect.size;
     }
     
     func fillInfosStudent(dic: NSDictionary) {
