@@ -16,8 +16,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var token = ""
     var dic: NSDictionary? = nil
+    var search: Bool = false
+    
     
     override func viewDidAppear(_ animated: Bool) {
+        self.search = false
         if ((Login.text?.characters.count)! > 0)
         {
             Button.isEnabled = true
@@ -118,11 +121,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 401 {
                     print("get Token 401")
+                    self.search = false
                     self.getToken()
                     self.getInfosStudent(token: self.token, login: self.Login.text!)
                 }
                 else if httpResponse.statusCode == 404 {
-                   self.alert(title: "Get infos student failure !", message: "Login not found", buttonTitle: "OK")
+                    self.alert(title: "Get infos student failure !", message: "Login not found", buttonTitle: "OK")
+                    self.search = false
                 }
                 else if let d = data {
                     print("NON PLS")
@@ -139,6 +144,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         print("Error")
                         self.alert(title: "Get infos student failure !", message: err as! String, buttonTitle: "OK")
                         print(err)
+                        self.search = false
                     }
                 }
             }
@@ -146,15 +152,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 let Error: NSError = error! as NSError
                 self.alert(title: "Get token failure !", message: Error.localizedDescription, buttonTitle: "OK")
                 print(Error.localizedDescription)
+                self.search = false
             }
         }
         task.resume()
     }
     
     @IBAction func SearchLogin(_ sender: Any) {
-        Button.isEnabled = false
+        var loginWithoutSpace = Login.text?.trimmingCharacters(in: .whitespaces)
         Button.alpha = 0.5
-        getInfosStudent(token: token, login: Login.text!)
+        Button.alpha = 0.5
+        Login.text? = loginWithoutSpace!
+        if ((loginWithoutSpace?.characters.count)! > 0 && self.search == false) {
+            self.search = true
+            getInfosStudent(token: token, login: loginWithoutSpace!)
+            
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
