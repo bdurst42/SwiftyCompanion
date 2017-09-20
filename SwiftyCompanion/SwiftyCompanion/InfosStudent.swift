@@ -11,20 +11,19 @@ import UIKit
 
 class InfosStudent: UIViewController,
 UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var Wallets: UILabel!
-    @IBOutlet weak var correctionPoints: UILabel!
     
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var Login: UILabel!
+    @IBOutlet weak var Wallets: UILabel!
+    @IBOutlet weak var correctionPoints: UILabel!
+    
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var levelBar: UIProgressView!
+    
     @IBOutlet weak var Level: UILabel!
     @IBOutlet weak var Phone: UILabel!
     @IBOutlet weak var Email: UILabel!
     @IBOutlet weak var Location: UILabel!
-    
-    @IBOutlet weak var profilePicture: UIImageView!
-    
-    @IBOutlet weak var levelBar: UIProgressView!
     
     @IBOutlet weak var Projects: UITableView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -36,28 +35,63 @@ UITableViewDelegate, UITableViewDataSource {
     var heightProjects:CGFloat = 0
     var heightSkills: CGFloat = 0
     
+    @IBOutlet weak var dynamicTVHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Projects.estimatedRowHeight = 100.0
-        //Projects.rowHeight = UITableViewAutomaticDimension
         let transform : CGAffineTransform = CGAffineTransform(scaleX: 1.0, y: 8.0)
         levelBar.transform = transform
         fillInfosStudent(dic: self.dic!)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let height = min(self.view.bounds.size.height, Projects.contentSize.height)
+        dynamicTVHeight.constant = height
+        self.view.layoutIfNeeded()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Projects.reloadData()
         profilePicture.layer.masksToBounds = false
         profilePicture.layer.cornerRadius = (profilePicture.frame.width / 2)
         profilePicture.clipsToBounds = true
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        var contentRect: CGRect = CGRect.zero
-        for view in self.scrollView.subviews {
-            contentRect = contentRect.union(view.frame);
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.numberOfCells
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectsCell") as! ProjectsTableViewCell
+            cell.projectsTab = self.projectsTab
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SkillsCell") as!SkillsTableViewCell
+            cell.skills = self.skills
+            return cell
         }
-        self.scrollView.contentSize = contentRect.size;
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        if (indexPath.row == 0) {
+            if (projectsTab.count > 0) {
+                return 300
+            } else {
+                return 30
+            }
+        } else {
+            if (skills.count > 0) {
+                return 300
+            }
+            else {
+                return 30
+            }
+        }
     }
     
     func fillInfosStudent(dic: NSDictionary) {
@@ -94,39 +128,5 @@ UITableViewDelegate, UITableViewDataSource {
             }
         }
         self.projectsTab =  (dic["projects_users"] as? NSArray)!
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.numberOfCells
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath.row == 0) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectsCell") as! ProjectsTableViewCell
-            cell.projectsTab = self.projectsTab
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SkillsCell") as!SkillsTableViewCell
-            cell.skills = self.skills
-            return cell
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        if (indexPath.row == 0) {
-            if (projectsTab.count > 0) {
-                return 300
-            } else {
-                return 30
-            }
-        } else {
-            if (skills.count > 0) {
-                return 300
-            }
-            else {
-                return 30
-            }
-        }
     }
 }

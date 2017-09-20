@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QM3-Eu-il0">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QM3-Eu-il0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -181,7 +181,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="375" height="300"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="d6f-zO-fyH" id="8f0-Pa-X0K">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EOd-sc-nFe">
@@ -192,7 +192,7 @@
                                                                             <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eMY-lV-I3l" id="dMm-g2-P6A">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqq-eJ-rax">
@@ -251,7 +251,7 @@
                                                         <rect key="frame" x="0.0" y="328" width="375" height="300"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="ddp-XT-F5w" id="vA0-8D-61t">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PHK-Mq-cgf">
@@ -262,7 +262,7 @@
                                                                             <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YtR-d4-8Dk" id="HFd-1z-6nU">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="am7-XO-2oo">
@@ -405,6 +405,7 @@
                         <outlet property="Projects" destination="was-n2-8su" id="I1v-I2-erq"/>
                         <outlet property="Wallets" destination="46p-Xe-UYc" id="Sb6-Rf-53U"/>
                         <outlet property="correctionPoints" destination="Pgk-3c-LE2" id="2ys-Oo-tbI"/>
+                        <outlet property="dynamicTVHeight" destination="DTO-AZ-vjX" id="KG5-A2-bKP"/>
                         <outlet property="levelBar" destination="dpM-So-3sa" id="utK-zK-i6H"/>
                         <outlet property="profilePicture" destination="KN3-JS-iul" id="a98-yj-4K9"/>
                         <outlet property="scrollView" destination="rcx-fy-5HL" id="q9B-JV-isd"/>
