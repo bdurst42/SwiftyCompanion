@@ -50,7 +50,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func SearchLogin(_ sender: Any) {
-        var loginWithoutSpace = Login.text?.trimmingCharacters(in: .whitespaces)
+        var loginWithoutSpace = Login.text?.components(separatedBy: .whitespaces).joined()
         Button.alpha = 0.5
         Button.alpha = 0.5
         Login.text? = loginWithoutSpace!
