@@ -46,18 +46,16 @@ UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let height = min(self.view.bounds.size.height, Projects.contentSize.height)
-        dynamicTVHeight.constant = height
+        dynamicTVHeight.constant = getProjectsHeight()
         self.view.layoutIfNeeded()
+        profilePicture.layer.cornerRadius = (profilePicture.frame.width / 2)
+        profilePicture.clipsToBounds = true
+        print(view.frame.height)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Projects.reloadData()
-        profilePicture.layer.masksToBounds = false
-        profilePicture.layer.cornerRadius = (profilePicture.frame.width / 2)
-        profilePicture.clipsToBounds = true
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,6 +72,19 @@ UITableViewDelegate, UITableViewDataSource {
             cell.skills = self.skills
             return cell
         }
+    }
+    
+    func getProjectsHeight() -> CGFloat {
+        if (projectsTab.count > 0) {
+            if (skills.count > 0) {
+                return 600.0
+            }
+            return 330.0
+        }
+        else if (skills.count > 0) {
+            return 330.0
+        }
+        return 60.0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
