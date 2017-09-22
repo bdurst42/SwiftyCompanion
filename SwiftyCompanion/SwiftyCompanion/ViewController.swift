@@ -52,6 +52,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func SearchLogin(_ sender: Any) {
         var loginWithoutSpace = Login.text?.components(separatedBy: .whitespaces).joined()
         Button.alpha = 0.5
+        Login.text? = loginWithoutSpace!
+        if ((loginWithoutSpace?.characters.count)! > 0 && self.search == false) {
+            self.search = true
+            getInfosStudent(token: token, login: loginWithoutSpace!)
+            
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        var loginWithoutSpace = Login.text?.components(separatedBy: .whitespaces).joined()
         Button.alpha = 0.5
         Login.text? = loginWithoutSpace!
         if ((loginWithoutSpace?.characters.count)! > 0 && self.search == false) {
@@ -59,6 +69,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             getInfosStudent(token: token, login: loginWithoutSpace!)
             
         }
+        textField.resignFirstResponder()
+        return true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -75,7 +87,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func alert(title: String, message: String, buttonTitle: String) {
         DispatchQueue.main.async {
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let alertController = UIAlertController(title: title  + " 😡", message: message, preferredStyle: .alert)
             let OKAction = UIAlertAction(title: buttonTitle, style: .default)
             {
                 action in alertController.dismiss(animated: true, completion: nil)

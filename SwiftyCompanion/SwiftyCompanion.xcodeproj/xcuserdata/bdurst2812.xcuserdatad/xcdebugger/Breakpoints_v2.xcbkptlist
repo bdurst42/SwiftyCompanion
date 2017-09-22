@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftyCompanion/ViewController.swift"
-            timestampString = "527594257.029581"
+            timestampString = "527772794.592814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "getToken()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftyCompanion/ViewController.swift"
-            timestampString = "527594257.029581"
+            timestampString = "527772794.592814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "getToken()"
             landmarkType = "7">
          </BreakpointContent>
