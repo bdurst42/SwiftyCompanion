@@ -50,7 +50,6 @@ UITableViewDelegate, UITableViewDataSource {
         self.view.layoutIfNeeded()
         profilePicture.layer.cornerRadius = (profilePicture.frame.width / 2)
         profilePicture.clipsToBounds = true
-        print(view.frame.height)
     }
     
     override func viewWillAppear(_ animated: Bool) {
