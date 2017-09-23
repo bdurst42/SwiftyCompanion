@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension String {
+    var isAlphanumeric: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    }
+}
+
 class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var Login: UITextField!
@@ -50,13 +56,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func SearchLogin(_ sender: Any) {
+        
         var loginWithoutSpace = Login.text?.components(separatedBy: .whitespaces).joined()
         Button.alpha = 0.5
         Login.text? = loginWithoutSpace!
-        if ((loginWithoutSpace?.characters.count)! > 0 && self.search == false) {
+        if ((loginWithoutSpace?.characters.count)! > 0 && self.search == false && (loginWithoutSpace?.isAlphanumeric)!) {
             self.search = true
             getInfosStudent(token: token, login: loginWithoutSpace!)
-            
+        }
+        else {
+            self.alert(title: "Bad login !", message: "Login must contains only alphanumerics", buttonTitle: "OK")
         }
     }
     
@@ -64,10 +73,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         var loginWithoutSpace = Login.text?.components(separatedBy: .whitespaces).joined()
         Button.alpha = 0.5
         Login.text? = loginWithoutSpace!
-        if ((loginWithoutSpace?.characters.count)! > 0 && self.search == false) {
+        if ((loginWithoutSpace?.characters.count)! > 0 && self.search == false && (loginWithoutSpace?.isAlphanumeric)!) {
             self.search = true
             getInfosStudent(token: token, login: loginWithoutSpace!)
-            
+        }
+        else {
+            self.alert(title: "Bad login !", message: "Login contains only alphanumerics", buttonTitle: "OK")
         }
         textField.resignFirstResponder()
         return true
